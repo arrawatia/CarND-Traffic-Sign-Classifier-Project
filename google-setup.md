@@ -68,7 +68,7 @@ CLI : https://cloud.google.com/deep-learning-vm/docs/cli
 
 	Edit `sudo vim /root/.jupyter/jupyter_notebook_config.py` and add password
 
-			aaMNLmySQgBMvqUUDfDD4nGPHByUQ
+		aaMNLmySQgBMvqUUDfDD4nGPHByUQ
 
 
 5. To stop and start the instance
@@ -80,12 +80,12 @@ CLI : https://cloud.google.com/deep-learning-vm/docs/cli
 6. To get the public IP of the instance
 	
 		$ gcloud --format="value(networkInterfaces[0].accessConfigs[0].natIP)" compute instances list
-		gcloud --format="value(networkInterfaces[0].accessConfigs[0].natIP)" compute instances describe tensorflow-1-vm
+		IP=$(gcloud --format="value(networkInterfaces[0].accessConfigs[0].natIP)" compute instances describe tensorflow-1-vm)
 
-		open http://$(gcloud --format='value(networkInterfaces[0].accessConfigs[0].natIP)' compute instances describe tensorflow-1-vm):8080/?token=c57cfa85f562081af3c3caea0f7db6a7553e39c31200f302
+		open http://${IP}:8080
 
 
 - Git SSH key setup
 
 		eval "$(ssh-agent -s)"
-		ssh-add ~/gitkey
+		ssh-add /home/sumit/gitkey
