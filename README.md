@@ -198,3 +198,20 @@ Top 5 softmax probablililies
 [2] https://medium.com/@REInvestor/converting-color-images-to-grayscale-ab0120ea2c1e
 
 
+## How to run the notebook ?
+
+1. Setup the environment 
+    
+   ``` 
+   conda env create -f environment-gpu.yml
+   conda activate carnd-term1
+   ```
+
+2. Download and uncompress the data
+    
+    ```
+    wget https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip
+    unzip traffic-signs-data.zip
+    ```
+3. Run the notebook
+    
